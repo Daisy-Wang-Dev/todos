@@ -1,9 +1,13 @@
+@use "../../styles/partials/mixins" as *;
+
 .header {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   margin: 1.6rem 0;
+
   &__name {
     padding: 1rem 0;
     font-size: 40px;

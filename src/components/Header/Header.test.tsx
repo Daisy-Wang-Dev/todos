@@ -1,7 +1,7 @@
 import {render,screen} from '@testing-library/react';
 import Header from './Header';
 
-describe(Header, ()=>{
+describe("Header", ()=>{
     beforeAll(() => {
         jest.useFakeTimers();
         jest.setSystemTime(new Date('17 Aug 2020 02:12:00 GMT').getTime())

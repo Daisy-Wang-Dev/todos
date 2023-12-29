@@ -1,4 +1,3 @@
-import { Interface } from "readline";
 import "./InputField.scss";
 import React from "react";
 

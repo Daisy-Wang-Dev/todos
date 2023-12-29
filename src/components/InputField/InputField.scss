@@ -1,9 +1,14 @@
+@use "../../styles/partials/mixins" as *;
+
 .input {
   display: flex;
   width: 95%;
   justify-content: center;
   position: relative;
   margin: auto;
+  @include media-desktop{
+    width: 72%;
+  }
 
   &__box {
     width: 100%;

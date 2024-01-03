@@ -4,6 +4,7 @@ import "./components/Header/Header";
 import Header from "./components/Header/Header";
 import InputField from "./components/InputField/InputField";
 import { Todo } from "./model";
+import TodoList from "./components/TodoList/TodoList";
 
 const App: React.FC = () => {
   const [todo, setTodo] = useState<string>("");
@@ -23,12 +24,7 @@ console.log(todos)
     <>
       <Header />
       <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
-      {/* <TodoList/> */}
-      {/* {Array.from(todos).map(todo => 
-      <li>
-        {todo.todo}
-      </li>
-        )} */}
+      <TodoList todos={todos} setTodos={setTodos}/>
     </>
   );
 };

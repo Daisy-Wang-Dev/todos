@@ -1,0 +1,21 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography";
+
+.todo {
+  &__single {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 1.6rem auto;
+    background-color: yellow;
+    border-radius: 5px;
+    padding: 2rem;
+    &--text {
+      flex: 1;
+      border: none;
+    }
+    @include media-desktop {
+      width: 70%;
+    }
+  }
+}

@@ -37,10 +37,14 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
   const inputRef = useRef<HTMLInputElement>(null);
   useEffect(() => {
     inputRef.current?.focus();
-  }, [edit])  
+  }, [edit]);
   return (
     <>
-      <form className="todo__single" onSubmit={(e) => handleEdit(e, todo.id)}>
+      <form
+        className="todo__single"
+        onSubmit={(e) => handleEdit(e, todo.id)}
+        data-testid="taskItem"
+      >
         {edit ? (
           <input
             value={editTodo}

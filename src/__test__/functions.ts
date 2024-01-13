@@ -10,3 +10,8 @@ export const addTask = (tasks: string[]) => {
     fireEvent.click(buttonElement);
   });
 };
+
+export const findOneTaskEl = (task:string)=>{
+  const taskElement = screen.getByText(task);
+  expect(taskElement).toBeInTheDocument();
+}

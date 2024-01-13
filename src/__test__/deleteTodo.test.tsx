@@ -1,13 +1,15 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import App from "../App";
-import { addTask } from "./functions";
+import { addTask, findOneTaskEl } from "./functions";
+
+
 
 describe("App", () => {
   it("deletes an added task correctly", () => {
+    const task = "Go grocery shopping"
     render(<App />);
-    addTask(["Go grocery shopping"]);
-    const taskElement = screen.getByText("Go grocery shopping");
-    expect(taskElement).toBeInTheDocument();
+    addTask([task]);
+    findOneTaskEl(task);
     const deleteButtonElement = screen.getByTitle("delete");
     fireEvent.click(deleteButtonElement);
     const deletedTask = screen.queryByText("Go grocery shopping");

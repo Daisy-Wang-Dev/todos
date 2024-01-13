@@ -1,16 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import App from "../App";
-
-const addTask = (tasks: string[]) => {
-  const inputElement = screen.getByPlaceholderText("enter a task");
-  const buttonElement = screen.getByRole("button", { name: "GO" });
-  tasks.forEach((task) => {
-    fireEvent.change(inputElement, {
-      target: { value: "Go grocery shopping" },
-    });
-    fireEvent.click(buttonElement);
-  });
-};
+import { addTask } from "./functions";
 
 describe("App", () => {
   it("adds a new task correctly", () => {

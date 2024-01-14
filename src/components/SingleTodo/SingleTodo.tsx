@@ -51,12 +51,16 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
             ref={inputRef}
             onChange={(e) => setEditTodo(e.target.value)}
             type="text"
-            className="todos__single--text"
+            className="todo__single--text"
           />
-        ) : todo.isDone ? (
-          <s className="todos__single--text">{todo.todo}</s>
         ) : (
-          <span className="todos__single--text">{todo.todo}</span>
+          <span
+            className={
+              todo.isDone ? "todo__single--done" : "todo__single--text"
+            }
+          >
+            {todo.todo}
+          </span>
         )}
         <div>
           <span className="icon">
@@ -69,10 +73,10 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
             />
           </span>
           <span className="icon" onClick={() => handleDelete(todo.id)}>
-            <AiFillDelete title="delete"/>
+            <AiFillDelete title="delete" />
           </span>
           <span className="icon" onClick={() => handleDone(todo.id)}>
-            <MdDone />
+            <MdDone title="done" />
           </span>
         </div>
       </form>

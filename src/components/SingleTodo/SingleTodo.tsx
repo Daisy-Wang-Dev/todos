@@ -47,6 +47,7 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
       >
         {edit ? (
           <input
+            title="edit mode"
             value={editTodo}
             ref={inputRef}
             onChange={(e) => setEditTodo(e.target.value)}
@@ -65,6 +66,7 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
         <div>
           <span className="icon">
             <AiFillEdit
+              title="edit"
               onClick={() => {
                 if (!edit && !todo.isDone) {
                   setEdit(!edit);

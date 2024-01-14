@@ -1,5 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 
+export const task:string = "Go grocery shopping"
+
 export const addTask = (tasks: string[]) => {
   const inputElement = screen.getByPlaceholderText("enter a task");
   const buttonElement = screen.getByRole("button", { name: "GO" });
